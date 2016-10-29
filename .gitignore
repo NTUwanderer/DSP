@@ -5,3 +5,6 @@ train
 test
 acc
 
+dsp_hw1/c_cpp/acc.txt
+dsp_hw1/c_cpp/model_*
+dsp_hw1/c_cpp/result*

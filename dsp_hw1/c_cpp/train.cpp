@@ -3,16 +3,19 @@
 #include <string.h>
 #include <iostream>
 #include <vector>
+#include <cassert>
 
 using std::cout;
 using std::endl;
 
-int main(int argc, char* argv[]) {
-    int iter_count      = atoi(argv[1]);
-    char* model_init    = argv[2];
-    char* model_seq     = argv[3];
-    char* model_out     = argv[4];
-    FILE* fp = open_or_die(model_out, "w");
+int main(int argc, char* args[]) {
+    assert(argc == 5);
+    int iter_count      = atoi(args[1]);
+    char* model_init    = args[2];
+    char* model_seq     = args[3];
+    char* model_out     = args[4];
+
+    FILE* fp            = open_or_die(model_out, "w");
 
     HMM hmm;
     loadHMM(&hmm, model_init);
@@ -150,5 +153,6 @@ int main(int argc, char* argv[]) {
         delete[] sequence[i];
 
     dumpHMM(fp, &hmm);
+
     return 0;
 }

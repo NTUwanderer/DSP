@@ -1,6 +1,6 @@
 # .PHONY: all clean
 
-CXXFLAGS+= -O2 -Wall
+CXXFLAGS+= -O3 -Wall
 LDFLAGS+=-lm     # link to math library
 
 TARGET=train test acc
