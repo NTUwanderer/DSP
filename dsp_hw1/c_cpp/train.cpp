@@ -10,12 +10,12 @@ using std::endl;
 
 int main(int argc, char* args[]) {
     assert(argc == 5);
-    int iter_count      = atoi(args[1]);
-    char* model_init    = args[2];
-    char* model_seq     = args[3];
-    char* model_out     = args[4];
+    const int iter_count    = atoi(args[1]);
+    const char* model_init    = args[2];
+    const char* model_seq     = args[3];
+    const char* model_out     = args[4];
 
-    FILE* fp            = open_or_die(model_out, "w");
+    FILE* fp_out        = open_or_die(model_out, "w");
 
     HMM hmm;
     loadHMM(&hmm, model_init);
@@ -26,7 +26,7 @@ int main(int argc, char* args[]) {
     double (&b)[MAX_OBSERV][MAX_STATE] = hmm.observation;
 
     int T = 0;
-    char input[MAX_SEQ+1];
+    char input[MAX_SEQ + 1];
     bool flag = true;
     FILE* fpseq = open_or_die(model_seq, "r");
     std::vector<int*> sequence;
@@ -152,7 +152,7 @@ int main(int argc, char* args[]) {
     for (int i = 0, length = sequence.size(); i < length; ++i)
         delete[] sequence[i];
 
-    dumpHMM(fp, &hmm);
+    dumpHMM(fp_out, &hmm);
 
     return 0;
 }
