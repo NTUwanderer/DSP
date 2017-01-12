@@ -1,0 +1,18 @@
+numstate:6, accuracy: 81.47
+numstate:7, accuracy: 87.80
+numstate:8, accuracy: 89.64
+numstate:9, accuracy: 90.91
+numstate:10, accuracy: 93.67
+numstate:11, accuracy: 94.25
+numstate:12, accuracy: 95.22
+
+numstate:12, gaussian: 10, accuracy: 95.22
+numstate:12, gaussian: 10, accuracy: 96.43
+numstate:12, gaussian: 12, accuracy: 96.55
+numstate:12, gaussian: 13, accuracy: 96.38
+numstate:12, gaussian: 14, accuracy: 96.32
+numstate:12, gaussian: 15, accuracy: 96.03
+
+iteration: 10
+numstate:12, gaussian: 12, accuracy: 96.84
+
